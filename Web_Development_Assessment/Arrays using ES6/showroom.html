@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Showroom</title>
+    <script src="showroom.js"></script>
+    <script>
+        
+        function laptop(){
+        document.getElementById("mydiv").innerHTML=Laptop;
+        }
+        function mobile(){
+        document.getElementById("mydiv").innerHTML=Mobile;
+        }
+        function tv(){
+        document.getElementById("mydiv").innerHTML=TV;
+        }
+    </script>
+</head>
+<body>
+    <h1>Electronics</h1>
+    Choose Option <input list="electronics" name="melectronic"/>
+    <datalist id="electronics">
+        <option value="Laptop" onmouseover="laptop()"></option>
+        <option value="Mobile" onmouseover="mobile()"></option>
+        <option value="TV" onmouseover="tv()"></option>
+    </datalist>
+
+    <div id="mydiv">
+        
+    </div>
+</body>
+</html>

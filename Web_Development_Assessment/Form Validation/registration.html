@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script src="checkUserName.js"></script>
+    <script>
+        function onSubmit(){
+            var username=document.getElementById("name").value;
+            var phonenumber=document.getElementById("pnumber").value;
+            var pass=document.getElementById("password").value;
+
+            if(username=="" || username.length<=5 || username.length>15)
+            { 
+                alert("Enter A Valid User Name");
+                document.Form1.uname.focus();
+            }
+            else if(pass=="")
+            {
+                alert("Enter Password");
+                document.Form1.upassword.focus();
+            }
+            else if(document.getElementById("city").value=="")
+            {
+                alert("Enter City");
+                document.Form1.ucity.focus();
+            }
+            else if(phonenumber.length!=10)
+            {
+                alert("Enter A Valid Phone Number");
+                document.Form1.upnumber.focus();
+            }
+            else{
+                var result=checkUserNameExitsOrNot();
+                
+                document.Form1.submit();
+             }
+        }
+    </script>
+
+    
+
+
+</head>
+<body>
+    <table border="10">
+    <form name="Form1">
+    </br>
+    <tr>
+    <td>  User Name:</td><td> <input type="text" name="uname" id="name"  placeholder="Username" ><br/><br/></td>
+    </tr>
+    <tr>   <td>Password: </td><td><input type="password" name="upassword" id="password" placeholder="Enter Password" ><br/><br/></td>
+    </tr>
+    <tr>    <td>Email: </td><td><input type="email" name="uemail" id="email" placeholder="Email ID(Optional)" > <br/><br/></td>
+    </tr>
+    <tr>  <td> City: </td><td><input type="text" name="ucity" id="city" placeholder="City"><br/><br/></td>
+    </tr>
+    <tr>   <td>Phone Number: </td><td><input type="text" name="upnumber" id="pnumber" placeholder="Mobile Number"><br/><br/></td>
+    </tr>
+    
+    <tr>  <td></td>  
+        <td> <input type="button" value="Submit" onclick="onSubmit()"></td>
+    </tr>
+    </form>
+<div id="mydiv"></div>
+    
+</table>
+</body>
+</html>
